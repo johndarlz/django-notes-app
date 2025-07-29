@@ -40,47 +40,45 @@ The application is containerized using Docker. Jenkins pulls the latest code fro
 Jenkins Shared Libraries are used for reusing functions across stages, and the Stage View Plugin allows tracking the pipeline visually. Role-based access is enforced in Jenkins for security.
 
 ---
+## 🧪 Jenkins CI/CD Pipeline
 
-🧪 Jenkins CI/CD Pipeline
-Jenkins pulls code from GitHub on every commit to main
+- Jenkins pulls code from GitHub on every commit to the `main` branch  
+- Builds Docker image and tags it  
+- Pushes the image to DockerHub  
+- Jenkins agent (on AWS EC2) pulls and runs the container  
+- Shared libraries are used to reuse logic  
+- Stage View Plugin displays all pipeline stages clearly  
 
-Builds Docker image and tags it
+---
 
-Pushes the image to DockerHub
+## 🔐 Jenkins Access Control
 
-Jenkins agent (on AWS EC2) pulls and runs the container
+- Created multiple users in Jenkins  
+- Used **Role-Based Strategy Plugin** to assign access  
+- Limited job and view access per role  
 
-Shared libraries are used to reuse logic
+---
 
-Stage View Plugin displays all pipeline stages clearly
+## 📚 Learnings
 
-🔐 Jenkins Access Control
-Created multiple users in Jenkins
+- CI/CD automation using Jenkins  
+- Dockerizing **React + Django** full-stack apps  
+- Reusable pipeline steps via Shared Libraries  
+- Jenkins node setup on **AWS EC2**  
+- Nginx reverse proxy setup for container exposure  
+- GitHub → DockerHub → EC2 pipeline flow  
+- Jenkins access control and security handling  
 
-Used Role-Based Strategy Plugin to assign access
+---
 
-Limited job and view access per role
+## 📄 Live App (Example)
 
-📚 Learnings
-CI/CD automation using Jenkins
+🌐 [http://your-ec2-public-ip-or-domain](http://your-ec2-public-ip-or-domain)
 
-Dockerizing React + Django full-stack apps
+---
 
-Reusable pipeline steps via Shared Libraries
+## 🙋‍♂️ Author
 
-Jenkins node setup on AWS EC2
-
-Nginx reverse proxy setup for container exposure
-
-GitHub → DockerHub → EC2 pipeline flow
-
-Jenkins access control and security handling
-
-
-
-
-🙋‍♂️ Author
-Kandukuri Jnaneswar (johndarlz)
-📧 Email: johnu.kandukuri@gmail.com
-🔗 GitHub: @johndarlz
-
+**Kandukuri Jnaneswar (johndarlz)**  
+📧 Email: [johnu.kandukuri@gmail.com](mailto:johnu.kandukuri@gmail.com)  
+🔗 GitHub: [@johndarlz](https://github.com/johndarlz)  
