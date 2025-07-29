@@ -71,11 +71,7 @@ Jenkins Shared Libraries are used for reusing functions across stages, and the S
 
 ---
 
-## 📄 Live App (Example)
 
-🌐 [http://your-ec2-public-ip-or-domain](http://your-ec2-public-ip-or-domain)
-
----
 
 ## 🙋‍♂️ Author
 
