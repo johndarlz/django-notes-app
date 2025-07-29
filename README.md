@@ -1,105 +1,86 @@
-title: "🚀 Full-Stack Notes App with CI/CD Pipeline using Jenkins, Docker, and AWS"
-note: "⚠️ Note: This project (simple notes app) was forked from another repository and is used purely for automating deployment and CI/CD processes using Jenkins and Docker."
+# 📝 Simple Notes App with CI/CD using Jenkins, Docker & AWS
 
-tools_used:
-  - React
-  - Django
-  - Docker
-  - Docker Compose
-  - Jenkins
-  - AWS EC2
-  - Nginx
-  - GitHub
-  - Jenkins Shared Libraries
-  - Jenkins Stage View Plugin
+> ⚠️ *Note: This project (Simple Notes App) was forked from another repository and is used purely for automating deployment and CI/CD processes using Jenkins and Docker.*
 
-project_overview: >
-  This is a full-stack Notes App built using React for the frontend and Django for the backend.
-  The application is containerized using Docker and deployed using Jenkins CI/CD on an AWS EC2 instance,
-  with Nginx configured as a reverse proxy.
-  This project also demonstrates the use of Jenkins agents, shared libraries, role-based access control,
-  and DockerHub for container image hosting.
+---
 
-requirements:
-  - Python 3.9+
-  - Node.js
-  - Docker
-  - Docker Compose
-  - Jenkins
-  - AWS EC2 Instance
-  - Nginx
+## 🚀 Project Overview
 
-installation_and_setup:
-  steps:
-    - step: Clone the Repository
-      commands:
-        - git clone https://github.com/LondheShubham153/django-notes-app.git
-        - cd django-notes-app
+- ✅ Full-stack Notes App (`React + Django`)
+- ✅ Forked from open-source repo
+- ✅ Automated pipeline using Jenkins on AWS EC2
+- ✅ Dockerized backend and frontend
+- ✅ Deployment to server via Jenkins agent
+- ✅ Reverse proxy with Nginx
+- ✅ Docker image pushed to DockerHub
 
-    - step: Build the Docker Image
-      commands:
-        - docker build -t notes-app .
+---
 
-    - step: Run the Docker Container
-      commands:
-        - docker run -d -p 8000:8000 notes-app:latest
+## 🔧 Tools Used
 
-docker_compose:
-  optional: true
-  up_command: docker-compose up --build -d
-  push_to_dockerhub:
-    - docker tag notes-app:latest your-dockerhub-username/notes-app:latest
-    - docker push your-dockerhub-username/notes-app:latest
+- React  
+- Django  
+- Docker  
+- Docker Compose  
+- Jenkins  
+- AWS EC2  
+- Nginx  
+- GitHub  
+- Jenkins Shared Libraries  
+- Jenkins Stage View Plugin  
 
-nginx_setup:
-  install:
-    - sudo apt-get update
-    - sudo apt install nginx
-  config_file: /etc/nginx/sites-available/default
-  configuration: |
-    server {
-        listen 80;
-        server_name your-domain.com;
+---
 
-        location / {
-            proxy_pass http://localhost:8000;
-            proxy_set_header Host $host;
-            proxy_set_header X-Real-IP $remote_addr;
-        }
-    }
-  restart_command: sudo systemctl restart nginx
+## ⚙️ How It Works
 
-jenkins_pipeline:
-  tasks:
-    - Clone repository from GitHub
-    - Build Docker image
-    - Push image to DockerHub
-    - Deploy container on EC2
-    - Use Jenkins Shared Libraries for reusable code
-    - Monitor process using Stage View Plugin
+The project is a full-stack Notes App using React for the frontend and Django for the backend. It is forked from [LondheShubham153/django-notes-app](https://github.com/LondheShubham153/django-notes-app) and used to automate deployment with Jenkins and Docker on an AWS EC2 instance.
 
-  agent_setup:
-    - Launch EC2 instance on AWS
-    - Install Java and Jenkins agent
-    - Connect to Jenkins master
-    - Assign node labels and manage jobs accordingly
+The application is containerized using Docker. Jenkins pulls the latest code from GitHub, builds the Docker image, pushes it to DockerHub, and deploys it to the AWS EC2 instance using Jenkins agents. Docker Compose can optionally be used for managing multi-container services. Nginx is configured as a reverse proxy to expose the app on port 80.
 
-jenkins_role_based_access_control:
-  - Created custom Jenkins users
-  - Assigned roles using Role-Based Strategy Plugin
-  - Restricted access based on permissions
+Jenkins Shared Libraries are used for reusing functions across stages, and the Stage View Plugin allows tracking the pipeline visually. Role-based access is enforced in Jenkins for security.
 
-learnings:
-  - End-to-end CI/CD pipeline setup using Jenkins
-  - Dockerizing and deploying full-stack applications
-  - Using DockerHub for storing images
-  - Reusability with Jenkins Shared Libraries
-  - Managing Jenkins agents (nodes) on AWS
-  - Reverse proxy setup with Nginx
-  - User role and permission management in Jenkins
+---
 
-license: MIT License
+🧪 Jenkins CI/CD Pipeline
+Jenkins pulls code from GitHub on every commit to main
 
-acknowledgements:
-  - Original forked repo: LondheShubham153/django-notes-app
-  - Community for Jenkins & DevOps knowledge sharing
+Builds Docker image and tags it
+
+Pushes the image to DockerHub
+
+Jenkins agent (on AWS EC2) pulls and runs the container
+
+Shared libraries are used to reuse logic
+
+Stage View Plugin displays all pipeline stages clearly
+
+🔐 Jenkins Access Control
+Created multiple users in Jenkins
+
+Used Role-Based Strategy Plugin to assign access
+
+Limited job and view access per role
+
+📚 Learnings
+CI/CD automation using Jenkins
+
+Dockerizing React + Django full-stack apps
+
+Reusable pipeline steps via Shared Libraries
+
+Jenkins node setup on AWS EC2
+
+Nginx reverse proxy setup for container exposure
+
+GitHub → DockerHub → EC2 pipeline flow
+
+Jenkins access control and security handling
+
+
+
+
+🙋‍♂️ Author
+Kandukuri Jnaneswar (johndarlz)
+📧 Email: johnu.kandukuri@gmail.com
+🔗 GitHub: @johndarlz
+
